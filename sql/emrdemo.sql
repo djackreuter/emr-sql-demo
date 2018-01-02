@@ -38,3 +38,13 @@ CREATE TABLE comments (
   comment_date TIMESTAMP(6) NOT NULL,
   PRIMARY KEY (id)
 );
+
+-- create comment_post table
+CREATE TABLE comment_post (
+  id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  comment_id INT UNSIGNED NOT NULL,
+  post_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (comment_id) REFERENCES comments (id),
+  FOREIGN KEY (post_id) REFERENCES posts (id),
+  PRIMARY KEY (id)
+);
