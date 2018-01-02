@@ -135,3 +135,24 @@ SELECT users.id, users.user_name, users.user_gender FROM users INNER JOIN posts 
 SELECT COUNT(*) AS comments_by_female_users FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender=1;
 -- show in table
 SELECT users.id, users.user_name, users.user_gender FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender=1;
+
+-- add column to table
+ALTER TABLE users ADD test_col VARCHAR(20);
+
+-- modify a column name
+ALTER TABLE users CHANGE `test_col` `new_col` VARCHAR(20);
+
+-- modify a record
+UPDATE users SET user_name = 'Angie' WHERE id = 3;
+
+-- delete a record
+DELETE FROM users WHERE id = 3;
+
+-- drop table
+DROP DATABASE emr_sql_demo;
+
+-- dump database content
+mysqldump -u user -p --databases emr_sql_demo > emr_sql_demo_backup.sql
+
+-- restore database
+mysql -u user -p emr_sql_demo < emr_sql_demo_backup.sql
