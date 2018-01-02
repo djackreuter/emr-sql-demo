@@ -18,3 +18,15 @@ CREATE TABLE users (
   UNIQUE (user_email),
   PRIMARY KEY (id)
 );
+
+-- create posts table
+CREATE TABLE posts (
+  id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  user_id INT UNSIGNED NOT NULL,
+  post_title VARCHAR(64),
+  post_content VARCHAR(1000) NOT NULL,
+  post_date TIMESTAMP(6) NOT NULL,
+  INDEX (user_id),
+  FOREIGN KEY (user_id) REFERENCES users (id),
+  PRIMARY KEY (id)
+);
