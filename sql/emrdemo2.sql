@@ -39,3 +39,12 @@ CREATE TABLE comments (
   comment_date TIMESTAMP(6) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users (id)
 );
+
+-- create comment_post table
+CREATE TABLE comment_post (
+  id BIGSERIAL NOT NULL PRIMARY KEY,
+  comment_id INT NOT NULL,
+  post_id INT NOT NULL,
+  FOREIGN KEY (comment_id) REFERENCES comments (id),
+  FOREIGN KEY (post_id) REFERENCES posts (id)
+);
