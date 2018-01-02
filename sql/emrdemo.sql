@@ -34,8 +34,10 @@ CREATE TABLE posts (
 -- create comments table
 CREATE TABLE comments (
   id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  user_id INT UNSIGNED NOT NULL,
   comment_body VARCHAR(500) NOT NULL,
   comment_date TIMESTAMP(6) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users (id),
   PRIMARY KEY (id)
 );
 
@@ -117,3 +119,19 @@ INSERT INTO comment_post VALUES (null, 9, 22);
 INSERT INTO comment_post VALUES (null, 10, 21);
 INSERT INTO comment_post VALUES (null, 11, 20);
 INSERT INTO comment_post VALUES (null, 12, 19);
+
+-- select all female users
+SELECT * FROM users WHERE user_gender = 1;
+
+-- count all male users
+SELECT COUNT(id) AS male_users FROM users WHERE user_gender = 0;
+
+-- count all posts by male users
+SELECT COUNT(*) AS posts_by_male_users FROM users INNER JOIN posts ON users.id=posts.user_id AND users.user_gender=0;
+-- show in a table
+SELECT users.id, users.user_name, users.user_gender FROM users INNER JOIN posts ON users.id=posts.user_id AND users.user_gender=0;
+
+-- count comments by female users
+SELECT COUNT(*) AS comments_by_female_users FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender=1;
+-- show in table
+SELECT users.id, users.user_name, users.user_gender FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender=1;
