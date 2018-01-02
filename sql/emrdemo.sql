@@ -30,3 +30,11 @@ CREATE TABLE posts (
   FOREIGN KEY (user_id) REFERENCES users (id),
   PRIMARY KEY (id)
 );
+
+-- create comments table
+CREATE TABLE comments (
+  id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  comment_body VARCHAR(500) NOT NULL,
+  comment_date TIMESTAMP(6) NOT NULL,
+  PRIMARY KEY (id)
+);
