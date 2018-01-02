@@ -1,3 +1,5 @@
+-- MYSQL
+
 -- create a database
 CREATE DATABASE emr_sql_demo;
 
