@@ -48,3 +48,12 @@ CREATE TABLE comment_post (
   FOREIGN KEY (post_id) REFERENCES posts (id),
   PRIMARY KEY (id)
 );
+
+-- insert some users into users table
+INSERT INTO users VALUES (null, 'John', 0, 'john@test.com', null, null);
+INSERT INTO users VALUES (null, 'Jane', 1, 'jane@test.com', null, null);
+INSERT INTO users VALUES (null, 'Anne', 1, 'anne@test.com', null, null);
+INSERT INTO users VALUES (null, 'Mark', 0, 'mark@test.com', null, null);
+INSERT INTO users VALUES (null, 'Gary', 0, 'gary@test.com', null, null);
+INSERT INTO users VALUES (null, 'Robert', 0, 'robert@test.com', null, null);
+INSERT INTO users VALUES (null, 'Lola', 1, 'lola@test.com', null, null);
