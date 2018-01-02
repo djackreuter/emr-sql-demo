@@ -89,3 +89,31 @@ INSERT INTO posts VALUES (null, 6, 'User 6 Post 4', 'User 6 Post 4 content', '20
 INSERT INTO posts VALUES (null, 7, 'User 7 Post 4', 'User 7 Post 4 content', '2018-01-02 06:45:15');
 INSERT INTO posts VALUES (null, 1, 'User 1 Post 5', 'User 1 Post 5 content', '2018-01-01 13:30:33');
 INSERT INTO posts VALUES (null, 2, 'User 2 Post 5', 'User 2 Post 5 content', '2018-01-01 16:06:45');
+
+-- insert some comments
+INSERT INTO comments VALUES (null, 'comment 1', '2018-01-01 17:06:05');
+INSERT INTO comments VALUES (null, 'comment 2', '2018-01-01 14:06:05');
+INSERT INTO comments VALUES (null, 'comment 3', '2018-01-02 07:06:05');
+INSERT INTO comments VALUES (null, 'comment 4', '2018-01-02 11:06:05');
+INSERT INTO comments VALUES (null, 'comment 5', '2018-01-02 11:30:05');
+INSERT INTO comments VALUES (null, 'comment 6', '2018-01-02 11:10:05');
+INSERT INTO comments VALUES (null, 'comment 7', '2018-01-02 11:06:05');
+INSERT INTO comments VALUES (null, 'comment 8', '2018-01-01 13:06:05');
+INSERT INTO comments VALUES (null, 'comment 9', '2018-01-02 11:20:05');
+INSERT INTO comments VALUES (null, 'comment 10', '2018-01-02 11:00:05');
+INSERT INTO comments VALUES (null, 'comment 11', '2018-01-02 11:16:05');
+INSERT INTO comments VALUES (null, 'comment 12', '2018-01-02 11:25:15');
+
+-- add relationships to comments
+INSERT INTO comment_post VALUES (null, 1, 30);
+INSERT INTO comment_post VALUES (null, 2, 29);
+INSERT INTO comment_post VALUES (null, 3, 28);
+INSERT INTO comment_post VALUES (null, 4, 27);
+INSERT INTO comment_post VALUES (null, 5, 26);
+INSERT INTO comment_post VALUES (null, 6, 25);
+INSERT INTO comment_post VALUES (null, 7, 24);
+INSERT INTO comment_post VALUES (null, 8, 23);
+INSERT INTO comment_post VALUES (null, 9, 22);
+INSERT INTO comment_post VALUES (null, 10, 21);
+INSERT INTO comment_post VALUES (null, 11, 20);
+INSERT INTO comment_post VALUES (null, 12, 19);
