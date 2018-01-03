@@ -103,3 +103,28 @@ INSERT INTO comments VALUES (DEFAULT, 4, 'comment 9', '2018-01-02 11:20:05');
 INSERT INTO comments VALUES (DEFAULT, 5, 'comment 10', '2018-01-02 11:00:05');
 INSERT INTO comments VALUES (DEFAULT, 6, 'comment 11', '2018-01-02 11:16:05');
 INSERT INTO comments VALUES (DEFAULT, 4, 'comment 12', '2018-01-02 11:25:15');
+
+-- add relationships to comments
+INSERT INTO comment_post VALUES (DEFAULT, 1, 30);
+INSERT INTO comment_post VALUES (DEFAULT, 2, 29);
+INSERT INTO comment_post VALUES (DEFAULT, 3, 28);
+INSERT INTO comment_post VALUES (DEFAULT, 4, 27);
+INSERT INTO comment_post VALUES (DEFAULT, 5, 26);
+INSERT INTO comment_post VALUES (DEFAULT, 6, 25);
+INSERT INTO comment_post VALUES (DEFAULT, 7, 24);
+INSERT INTO comment_post VALUES (DEFAULT, 8, 23);
+INSERT INTO comment_post VALUES (DEFAULT, 9, 22);
+INSERT INTO comment_post VALUES (DEFAULT, 10, 21);
+INSERT INTO comment_post VALUES (DEFAULT, 11, 20);
+INSERT INTO comment_post VALUES (DEFAULT, 12, 19);
+
+-- select all female users
+SELECT user_name, user_email FROM users WHERE user_gender = 1;
+
+-- count all male users
+SELECT COUNT(id) AS male_users FROM users WHERE user_gender = 0;
+
+-- count all posts by male users
+SELECT COUNT(*) AS posts_by_male_users FROM users INNER JOIN posts ON users.id=posts.user_id AND users.user_gender = 0;
+-- show in a table
+SELECT users.id, users.user_name, users.user_gender, posts.post_title FROM users INNER JOIN posts ON users.id = posts.user_id AND users.user_gender = 0;
