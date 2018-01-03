@@ -128,3 +128,29 @@ SELECT COUNT(id) AS male_users FROM users WHERE user_gender = 0;
 SELECT COUNT(*) AS posts_by_male_users FROM users INNER JOIN posts ON users.id=posts.user_id AND users.user_gender = 0;
 -- show in a table
 SELECT users.id, users.user_name, users.user_gender, posts.post_title FROM users INNER JOIN posts ON users.id = posts.user_id AND users.user_gender = 0;
+
+-- count comments by female users
+SELECT COUNT(*) AS comments_by_female_users FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender = 1;
+-- show in table
+SELECT users.id, users.user_name, users.user_gender, comments.comment_body FROM users JOIN comments ON users.id=comments.user_id AND users.user_gender = 1;
+
+-- add column to table
+ALTER TABLE users ADD test_col VARCHAR(20);
+
+-- modify a column name
+ALTER TABLE users RENAME test_col TO new_col;
+
+-- modify column datatype
+ALTER TABLE users ALTER COLUMN new_col TYPE VARCHAR(50);
+
+-- delete a record
+DELETE FROM users WHERE id = 8;
+
+-- dump database content
+pg_dump -U jimmy emr_sql_demo > emr_sql_demo_backup.pgsql
+
+-- restore database content
+psql -U jimmy emr_sql_demo < emr_sql_demo_backup.pgsql
+
+-- drop database
+DROP DATABASE emr_sql_demo;
