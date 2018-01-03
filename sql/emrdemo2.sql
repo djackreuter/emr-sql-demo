@@ -89,3 +89,17 @@ INSERT INTO posts VALUES (DEFAULT, 6, 'User 6 Post 4', 'User 6 Post 4 content', 
 INSERT INTO posts VALUES (DEFAULT, 7, 'User 7 Post 4', 'User 7 Post 4 content', '2018-01-02 06:45:15');
 INSERT INTO posts VALUES (DEFAULT, 1, 'User 1 Post 5', 'User 1 Post 5 content', '2018-01-01 13:30:33');
 INSERT INTO posts VALUES (DEFAULT, 2, 'User 2 Post 5', 'User 2 Post 5 content', '2018-01-01 16:06:45');
+
+-- insert some comments
+INSERT INTO comments VALUES (DEFAULT, 1, 'comment 1', '2018-01-01 17:06:05');
+INSERT INTO comments VALUES (DEFAULT, 3, 'comment 2', '2018-01-01 14:06:05');
+INSERT INTO comments VALUES (DEFAULT, 2, 'comment 3', '2018-01-02 07:06:05');
+INSERT INTO comments VALUES (DEFAULT, 5, 'comment 4', '2018-01-02 11:06:05');
+INSERT INTO comments VALUES (DEFAULT, 4, 'comment 5', '2018-01-02 11:30:05');
+INSERT INTO comments VALUES (DEFAULT, 7, 'comment 6', '2018-01-02 11:10:05');
+INSERT INTO comments VALUES (DEFAULT, 2, 'comment 7', '2018-01-02 11:06:05');
+INSERT INTO comments VALUES (DEFAULT, 7, 'comment 8', '2018-01-01 13:06:05');
+INSERT INTO comments VALUES (DEFAULT, 4, 'comment 9', '2018-01-02 11:20:05');
+INSERT INTO comments VALUES (DEFAULT, 5, 'comment 10', '2018-01-02 11:00:05');
+INSERT INTO comments VALUES (DEFAULT, 6, 'comment 11', '2018-01-02 11:16:05');
+INSERT INTO comments VALUES (DEFAULT, 4, 'comment 12', '2018-01-02 11:25:15');
